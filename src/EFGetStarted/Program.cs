@@ -13,11 +13,13 @@ namespace EFGetStarted
                 
                 Console.WriteLine("Inserting a new blog");
                 db.Add(new Blog { Url = "http://blogs.msdn.com/adonet" });
-                db.SaveChanges();
+                
 
+                Console.WriteLine("Enter a new blog: ");
                 var test = Console.ReadLine();
-                Console.WriteLine("Enter new ");
+                db.Add(new Blog { Url = $"{test}" });
 
+                db.SaveChanges();
             }
         }
     }
